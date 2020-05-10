@@ -1,0 +1,28 @@
+extends base
+block content
+  .form-container-signup
+    form.signup
+      h2(style='position: relative;padding-top: 2rem; margin-bottom: 5rem;') Hi! Join US
+      .entry-signup(style="margin-top:-6rem")
+        .entry-signup-text Name
+        input(type='string',placeholder=" Your Name",style='width:25rem;height:2rem;border: 1px solid grey;').sname
+      .entry-signup
+        .entry-signup-text Email
+        input(type='email',placeholder=" Your Mail-id",style='width: 25rem; height:2rem;border: 1px solid grey;margin-bottom:0rem').semail
+      .entry-signup
+        .entry-signup-text Password
+        input(type='password',placeholder=" Your Password",style='width:25rem;height:2rem;border: 1px solid grey;').spassword
+      .entry-signup
+        .entry-signup-text Confirm Password
+        input(type='password',placeholder=" Confirm Your Password",style='width:25rem;height:2rem;border: 1px solid grey;').sconfirmpassword
+      .entry-signup
+        .entry-signup-text Roles
+        select(style='width:25rem;height:2rem;border: 1px solid grey;').sroles
+            option(value="admin") admin
+            option(value="user") user
+            option(value="resturantowner") resturantowner
+            option(value="delivery boy") delivery boy
+      .entry-signup
+        .btn-parent
+          button(type="submit").btn.btn-full.form-button Signup
+    .signup-pic

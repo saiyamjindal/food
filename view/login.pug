@@ -1,0 +1,16 @@
+extends base
+block content
+  .form-container-login
+    form.login
+      h2(style='position: relative; right: 3rem; padding-top: 2rem;') Welcome Back
+      .entry(style='padding-top: 0rem;')
+        .entry-text Email
+        input(type='email', placeholder="Your Email",style="border: 1px solid grey;").email
+      .entry
+        .entry-text Password
+        input(type='password', placeholder=" Password",style="border: 1px solid grey;").password
+      .entry
+        .btn-parent
+          button(type="submit").btn.btn-full.form-button LOGIN
+      button(type="submit").forget Forget Password?
+    .login-pic

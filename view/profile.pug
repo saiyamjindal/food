@@ -1,0 +1,19 @@
+extend base
+block  content
+  .user-container-profile
+    .profile
+      p.prof(style="margin-top:5rem") Name :#{user.name}
+      p.prof Email:#{user.email}
+      p Image 
+            img(src=`${user.profileImage}`, alt="", srcset="")
+            input(type="file", name="photo").updateProfile
+      p 
+        a(herf="/").prof Settings
+      br
+      if user.role=="admin"
+        p 
+          a(href="/managePlans" ).prof Manage Plans
+        br
+        p 
+          a(href="/manageUser").prof Manage User
+    .profile-pic    

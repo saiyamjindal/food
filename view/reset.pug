@@ -1,0 +1,21 @@
+extends base
+block content
+  .form-container-reset
+    form(style="top:0rem").reset
+      .entry
+        .entry-text New Password
+        input(type='password').newpass
+      .entry
+        .entry-text Confirm Password
+        input(type='password').confirmpass
+      .entry
+        .entry-text
+        input(type='hidden',value=token).token
+      .entry
+        .btn-parent
+          button(type="submit").btn.btn-full.form-button RESET
+      .reset-pic
+  script(src="https://unpkg.com/axios/dist/axios.min.js" crossorigin="true")
+  script(src="../js/frontend.js")
+  script(src="../js/script.js")
+
