@@ -1,7 +1,6 @@
 {
-  "name": "Lecture-20_Backend",
+  "name": "food",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -23,5 +22,14 @@
   },
   "devDependencies": {
     "nodemon": "^2.0.2"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/saiyamjindal/food.git"
+  },
+  "bugs": {
+    "url": "https://github.com/saiyamjindal/food/issues"
+  },
+  "homepage": "https://github.com/saiyamjindal/food#readme",
+  "description": ""
 }
