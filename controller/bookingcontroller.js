@@ -1,5 +1,5 @@
 
-let SK=process.env.SK||require("../config/secrets").SK;
+let SK=process.env.SK;
 const stripe = require('stripe')(SK);
 const planModel = require("../model/planModel");
 const userModel = require("../model/userModel");
