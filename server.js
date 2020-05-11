@@ -10,6 +10,9 @@ const reviewRouter= require("./router/reviewRouter");
 const bookingRouter = require("./router/bookingRouter");
 
 const errorExtender = require("./utility/ErrorExtender");
+const globalErrorHandler=require("./utility/globalErrorHandler")
+
+process.env.NODE_ENV = process.env.NODE_ENV || "production";
 
 // 1.middleware
 // app.use(function f1(req, res, next) {
@@ -32,23 +35,20 @@ app.use("/api/users", userRouter);
 app.use("/", viewRouter);
 app.use("/api/bookings", bookingRouter);
 
-app.use("*",function(req,res,next){
-  err = new errorExtender("Page not found",404);
+app.use("*", function (req, res, next) {
+
+  // error => error send 
+  err = new errorExtender("Page Not found", 404);
+  //  express feature => error pass for error handeling middleware
   next(err);
 })
-
-app.use("*", function(err,req,res,next)
-{
-  err.statusCode= err.statusCode ||500;
-  err.status = err.status || "unknown error";
-  res.status(err.statusCode).json({
-    status: err.status,
-    message: err.message
-  })
-})
-
+app.use("*", globalErrorHandler);
+//  server add env variable => hosting => single mutiple server host 
+// 1. 
 const port = process.env.PORT || 3000;
-
+app.listen(port, function () {
+  console.log("Server has started at port 3000");
+});
 app.listen(port, function () {
   console.log("Server has started at port 3000");
 });

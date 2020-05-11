@@ -1,12 +1,11 @@
 
 let SK=process.env.SK||require("../config/secrets").SK;
-const stripe = require('stripe')();
+const stripe = require('stripe')(SK);
 const planModel = require("../model/planModel");
 const userModel = require("../model/userModel");
 async function createSession(req, res) {
   // retrive your plan and user
   try {
-
     let { id } = req
     let userId = id;
     let { planId } = req.body;
