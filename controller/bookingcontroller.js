@@ -1,11 +1,13 @@
 
+// process.env.SK=> mention variable
 let SK=process.env.SK;
-const stripe = require('stripe')(SK);
+const stripe = require("stripe")(SK);
 const planModel = require("../model/planModel");
 const userModel = require("../model/userModel");
 async function createSession(req, res) {
   // retrive your plan and user
   try {
+
     let { id } = req
     let userId = id;
     let { planId } = req.body;
@@ -27,6 +29,8 @@ async function createSession(req, res) {
           quantity: 1
         }
       ],
+      // dev => http
+      // production => https 
       success_url: `${req.protocol}://${req.get("host")}/profile`,
       cancel_url: `${req.protocol}://${req.get("host")}/profile`
     })
