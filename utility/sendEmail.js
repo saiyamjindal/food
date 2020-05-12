@@ -1,5 +1,5 @@
 const nodemailer = require("nodemailer");
-const config = require("../config/secrets");
+const APP_PASSWORD = process.env.APP_PASSWORD;
 module.exports = async function sendEmail(option) {
   try {
     // email configuration=> transport
@@ -9,7 +9,7 @@ module.exports = async function sendEmail(option) {
       secure: true,
       auth: {
         user: "jindal.saiyam123@gmail.com",
-        pass: config.APP_PASSWORD
+        pass: APP_PASSWORD
       }
     })
     // email options
